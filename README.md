@@ -15,5 +15,7 @@ npm run dev
 - Next 16
 - MUI
 - Prisma
-- docker
-- postgres
+- Docker
+- Postgres
+- Better-Auth
+- React Hook Form

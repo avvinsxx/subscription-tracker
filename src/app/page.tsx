@@ -4,10 +4,10 @@ import { Logo } from "@/shared";
 
 import { styles } from "./styles";
 
-export default function Home() {
+export default function Page() {
   return (
     <Box sx={styles.page}>
-      <Logo />
+      <Logo variant="logo1" />
       <Typography variant="h4" sx={styles.page__slogan}>
         Ваш персональный помощник в учете личных финансов
       </Typography>
