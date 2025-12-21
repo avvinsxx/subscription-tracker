@@ -5,6 +5,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { redirect } from "next/navigation";
 import { Box, Button, FormHelperText, TextField } from "@mui/material";
 
 import { sendOtp, signin } from "@/data";
@@ -44,7 +45,7 @@ export const OtpForm = ({ email, timeout }: Props) => {
       const { data, error } = await signin(email, otpString);
 
       if (data) {
-        //TODO redirect to dashboard
+        redirect("/dashboard");
       } else if (error?.status === 429) {
         setError("Попытки ичсчерпаны, получите другой код и попробуйте снова");
       } else if (error?.status === 400) {
