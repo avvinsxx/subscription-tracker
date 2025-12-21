@@ -4,10 +4,12 @@ import "@mui/material/Typography";
 declare module "@mui/material/styles" {
   interface TypographyVariants {
     logo1: React.CSSProperties;
+    logo2: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
     logo1?: React.CSSProperties;
+    logo2?: React.CSSProperties;
   }
 
   interface Palette {
@@ -22,5 +24,6 @@ declare module "@mui/material/styles" {
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     logo1: true;
+    logo2: true;
   }
 }

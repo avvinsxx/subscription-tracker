@@ -11,10 +11,18 @@ export const theme = createTheme({
       fontWeight: 800,
       lineHeight: 1,
     },
+    logo2: {
+      fontSize: "3rem",
+      fontFamily: "var(--font-bodoni)",
+      fontWeight: 800,
+      lineHeight: 1,
+    },
   },
   palette: {
     green: {
+      light: "#e9f7ed",
       main: "#d4edda",
+      dark: "#7bb489",
     },
   },
 });
