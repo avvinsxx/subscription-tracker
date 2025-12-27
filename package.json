@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run docker:dev && npm run next:dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "next:dev": "next dev",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
     "prisma:push": "prisma db push",
-    "docker:dev": "docker-compose up"
+    "docker:dev": "docker-compose up -d"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
