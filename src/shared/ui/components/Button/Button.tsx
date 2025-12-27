@@ -1,13 +1,8 @@
-import { ButtonHTMLAttributes } from "react";
+import Link from "next/link";
 import clsx from "clsx";
 
+import { ButtonAsLinkProps, ButtonProps, Props } from "./types";
 import styles from "./styles.module.scss";
-
-type Props = {
-  variant: "filled" | "outlined";
-  color: "primary" | "secondary";
-  size: "sm" | "md";
-} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button = ({
   variant,
@@ -15,19 +10,36 @@ export const Button = ({
   className,
   children,
   size,
+  asLink = false,
   ...props
 }: Props) => {
-  return (
-    <button
-      className={clsx(
-        styles.button,
-        styles[`button_${variant}`],
-        styles[`button_${size}`],
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </button>
-  );
+  if (asLink) {
+    return (
+      <Link
+        className={clsx(
+          styles.button,
+          styles[`button_${variant}`],
+          styles[`button_${size}`],
+          className,
+        )}
+        {...(props as ButtonAsLinkProps)}
+      >
+        {children}
+      </Link>
+    );
+  } else {
+    return (
+      <button
+        className={clsx(
+          styles.button,
+          styles[`button_${variant}`],
+          styles[`button_${size}`],
+          className,
+        )}
+        {...(props as ButtonProps)}
+      >
+        {children}
+      </button>
+    );
+  }
 };

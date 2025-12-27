@@ -5,6 +5,8 @@
 .button {
     border-radius: rounding.$sm;
     display: flex;
+    justify-content: center;
+    text-decoration: none;
 
     &_sm {
         padding: spacing.$xs;
