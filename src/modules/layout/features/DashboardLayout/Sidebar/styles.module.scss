@@ -5,5 +5,8 @@
     background-color: colors.$bgDark;
     width: 240px;
     padding: spacing.$sm;
-
+    box-shadow: 0 0 10px 5px colors.$shadow;
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$md;
 }

@@ -1,5 +1,8 @@
+@use "sass:color";
+
 $honeydew: #d4edda;
 $mintLeaf: #71ac7f;
+$evergreen: #18301d;
 $darkAmethyst: #0d0630;
 $cottonRose: #ffcfd2;
 $stoneBrown: #545145;
@@ -17,3 +20,5 @@ $buttonBgSecondary: $cottonRose;
 
 $buttonTextPrimary: $cottonRose;
 $buttonTextSecondary: $darkAmethyst;
+
+$shadow: color.scale($bgDark, $lightness: -40%);

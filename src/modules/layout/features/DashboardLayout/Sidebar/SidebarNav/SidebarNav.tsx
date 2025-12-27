@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { BarChart4Bulk, RefreshDollar1Bulk } from "@lineiconshq/free-icons";
+import { DollarCircleOutlined, Home2Outlined } from "@lineiconshq/free-icons";
 
 import { SidebarLink } from "./SidebarLink";
 
@@ -16,16 +16,16 @@ export const SidebarNav = () => {
           <SidebarLink
             href="/dashboard"
             active={"/dashboard" === pathname}
-            icon={BarChart4Bulk}
+            icon={Home2Outlined}
           >
-            Панель управления
+            Главная
           </SidebarLink>
         </li>
         <li>
           <SidebarLink
             href="/dashboard/operations"
             active={"/dashboard/operations" === pathname}
-            icon={RefreshDollar1Bulk}
+            icon={DollarCircleOutlined}
           >
             Операции
           </SidebarLink>
