@@ -6,13 +6,13 @@ import {
   useState,
 } from "react";
 import { redirect } from "next/navigation";
-import { Box, Button, FormHelperText, TextField } from "@mui/material";
 
 import { sendOtp, signin } from "@/data";
+import { Button, Input, InputError } from "@/shared";
 
-import { styles } from "./styles";
 import { useResendTimer } from "./hoooks";
 import { KEYBOARD_KEY, OTP_LENGTH } from "./constants";
+import styles from "./styles.module.scss";
 
 type Props = {
   email: string;
@@ -120,43 +120,41 @@ export const OtpForm = ({ email, timeout }: Props) => {
     }
   };
 
+  console.log("aaa");
+
   return (
-    <Box sx={styles.otpForm}>
-      <Box>
-        <Box sx={styles.otpForm__inputsRow}>
+    <div className={styles.otpForm}>
+      <div>
+        <div className={styles.otpForm__inputsRow}>
           {Array.from({ length: OTP_LENGTH }).map((_, i) => (
-            <TextField
-              inputRef={(el) => (inputsRef.current[i] = el)}
+            <Input
+              ref={(el) => {
+                inputsRef.current[i] = el;
+              }}
               key={i}
               autoFocus={i === 0}
               value={otp[i] || ""}
-              sx={styles.otpForm__inputContainer}
-              slotProps={{
-                htmlInput: {
-                  sx: styles.otpForm__input,
-                },
-              }}
+              className={styles.otpForm__inputContainer}
+              inputClassName={styles.otpForm__input}
               onChange={(e) => _onChange(e, i)}
               onKeyDown={(e) => _onKeyDown(e, i)}
               onFocus={_onFocus}
               disabled={isSubmitting}
             />
           ))}
-        </Box>
-        <FormHelperText error sx={styles.otpForm__error}>
-          {error}
-        </FormHelperText>
-      </Box>
+        </div>
+        {error && <InputError>{error}</InputError>}
+      </div>
       <Button
-        variant="contained"
-        size="large"
-        fullWidth
+        variant="filled"
+        size="md"
+        color="primary"
         type="submit"
         disabled={secondsToResend > 0 || isSubmitting}
         onClick={_onResendClick}
       >
         Отправить повторно {secondsToResend ? `(${secondsToResend} с)` : ""}
       </Button>
-    </Box>
+    </div>
   );
 };

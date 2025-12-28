@@ -1,0 +1,26 @@
+@use "spacing";
+
+.otpForm {
+    gap: spacing.$md;
+    display: flex;
+    flex-direction: column;
+
+    &__inputsRow {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__inputContainer {
+        width: 15%;
+    }
+
+    &__input {
+        text-align: center;
+    }
+
+    &__error {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+}

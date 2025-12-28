@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Box, Button, TextField } from "@mui/material";
 
 import { sendOtp } from "@/data";
+import { Button, Input } from "@/shared";
 
-import { styles } from "./styles";
 import { OtpForm } from "./OtpForm";
+import styles from "./styles.module.scss";
 
 type Inputs = {
   email: string;
@@ -34,20 +34,13 @@ export const SigninForm = () => {
   return (
     <>
       {!email && (
-        <Box
-          component="form"
-          onSubmit={handleSubmit(_onSubmit)}
-          sx={styles.signinForm}
-        >
-          <TextField
-            error={!!formState.errors.email?.message}
-            helperText={formState.errors.email?.message}
+        <form onSubmit={handleSubmit(_onSubmit)} className={styles.signinForm}>
+          <Input
             label="Email"
             type="text"
             autoComplete="email"
             autoFocus
-            variant="outlined"
-            fullWidth
+            error={formState.errors.email?.message}
             {...register("email", {
               required: { value: true, message: "Обязательное поле" },
               pattern: {
@@ -56,10 +49,10 @@ export const SigninForm = () => {
               },
             })}
           />
-          <Button variant="contained" size="large" fullWidth type="submit">
+          <Button variant="filled" color="primary" size="md" type="submit">
             ВОЙТИ
           </Button>
-        </Box>
+        </form>
       )}
       {email && <OtpForm email={email} timeout={otpSendTimeout} />}
     </>
