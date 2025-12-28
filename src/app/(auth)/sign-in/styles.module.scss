@@ -1,0 +1,22 @@
+@use "colors";
+@use "spacing";
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background-color: colors.$bgLight;
+    gap: spacing.$md;
+
+    &__card {
+        box-shadow: 0 0 10px 5px colors.$shadow;
+        background-color: colors.$bgDark;
+        width: 30%;
+        min-width: 300px;
+        maxw-idth: 400px;
+        padding: spacing.$md;
+        boxshadow: 5px 5px 10px gray;
+    }
+}

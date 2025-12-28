@@ -1,17 +1,15 @@
-import { Box, Card } from "@mui/material";
-
 import { SigninForm } from "@/modules/auth";
 import { Logo } from "@/shared";
 
-import { styles } from "./styles";
+import styles from "./styles.module.scss";
 
 export default function Page() {
   return (
-    <Box sx={styles.page}>
+    <div className={styles.page}>
       <Logo variant="logo2" />
-      <Card variant="outlined" sx={styles.page__card}>
+      <div className={styles.page__card}>
         <SigninForm />
-      </Card>
-    </Box>
+      </div>
+    </div>
   );
 }

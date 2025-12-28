@@ -19,8 +19,6 @@
     "@emotion/styled": "^11.14.1",
     "@lineiconshq/free-icons": "^1.0.3",
     "@lineiconshq/react-lineicons": "^1.0.5",
-    "@mui/material": "^7.3.6",
-    "@mui/material-nextjs": "^7.3.6",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
     "better-auth": "^1.4.8-beta.1",
