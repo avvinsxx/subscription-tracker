@@ -6,11 +6,12 @@ $evergreen: #18301d;
 $darkAmethyst: #0d0630;
 $cottonRose: #ffcfd2;
 $stoneBrown: #545145;
+$strawberryRed: #ef4444;
 
 $bgLight: $honeydew;
 $bgDark: $mintLeaf;
 
-$textLogo: $honeydew;
+$textLogo: $evergreen;
 $textPrimary: $darkAmethyst;
 $textSecondary: $stoneBrown;
 $textLink: $cottonRose;
@@ -22,3 +23,6 @@ $buttonTextPrimary: $cottonRose;
 $buttonTextSecondary: $darkAmethyst;
 
 $shadow: color.scale($bgDark, $lightness: -40%);
+$border: color.scale($bgDark, $lightness: -40%);
+
+$error: $strawberryRed;
