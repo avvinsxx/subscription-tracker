@@ -7,8 +7,12 @@
     --surface-color: #{colors.$color-emerald-600};
     --border-color: #{colors.$color-neutral-950};
     --error-color: #{colors.$color-red-700};
-    --shadow-color: #{colors.$color-neutral-500};
+    --shadow-color: #{colors.$color-neutral-700};
+
+    --btn-primary-color: var(--primary-color);
+    --btn-hover-primary-color: oklch(0.566 0.179 58.318);
     --btn-secondary-color: #{colors.$color-neutral-950};
+    --btn-hover-secondary-color: oklch(0.237 0.077 45.635);
 
     @media (prefers-color-scheme: dark) {
         --bg-color: #{colors.$color-emerald-950};
@@ -18,6 +22,10 @@
         --border-color: #{colors.$color-neutral-100};
         --error-color: #{colors.$color-red-700};
         --shadow-color: #{colors.$color-neutral-950};
+
+        --btn-primary-color: var(--primary-color);
+        --btn-hover-primary-color: oklch(0.566 0.179 58.318);
         --btn-secondary-color: #{colors.$color-neutral-200};
+        --btn-hover-secondary-color: oklch(0.784 0 0);
     }
 }

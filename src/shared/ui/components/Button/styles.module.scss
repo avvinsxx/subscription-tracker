@@ -10,6 +10,18 @@ $block: ".button";
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px var(--shadow-color);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px var(--shadow-color);
+    }
 
     &_sm {
         padding: spacing.$xs2;
@@ -23,26 +35,49 @@ $block: ".button";
         color: var(--bg-color);
 
         &#{$block}_primary {
-            background-color: var(--primary-color);
+            background-color: var(--btn-primary-color);
+
+            &:hover,
+            &:focus {
+                background-color: var(--btn-hover-primary-color);
+            }
         }
 
         &#{$block}_secondary {
             background-color: var(--btn-secondary-color);
+
+            &:hover,
+            &:focus {
+                background-color: var(--btn-hover-secondary-color);
+            }
         }
     }
 
     &_outlined {
         border-width: 1px;
         border-style: solid;
+        background-color: transparent;
 
         &#{$block}_primary {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+            border-color: var(--btn-primary-color);
+            color: var(--btn-primary-color);
+
+            &:hover,
+            &:focus {
+                border-color: var(--btn-hover-primary-color);
+                color: var(--btn-hover-primary-color);
+            }
         }
 
         &#{$block}_secondary {
             border-color: var(--btn-secondary-color);
             color: var(--btn-secondary-color);
+
+            &:hover,
+            &:focus {
+                border-color: var(--btn-hover-secondary-color);
+                color: var(--btn-hover-secondary-color);
+            }
         }
     }
 }
