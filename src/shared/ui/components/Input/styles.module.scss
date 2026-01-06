@@ -1,59 +1,97 @@
-@use "spacing";
-@use "typography";
-@use "rounding";
+@use 'spacing';
+@use 'typography';
+@use 'rounding';
 
 .input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: spacing.$xs2;
+
+  &__container {
     position: relative;
+  }
 
-    &__label {
-        font-size: typography.$text1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(13px, 11px);
-        transition:
-            transform 0.3s,
-            backdrop-filter 0.3s,
-            padding 0.3s;
-        color: var(--text-color);
+  &__label {
+    font-size: typography.$text1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(13px, 11px);
+    transition:
+      transform 0.3s,
+      padding 0.3s;
+    color: var(--text-color);
+    cursor: text;
 
-        &_error {
-            color: var(--error-color);
-        }
+    &_error {
+      color: var(--error-color);
     }
 
-    &__input {
-        font-size: typography.$text1;
-        padding: spacing.$sm;
-        width: 100%;
-        border: 1px solid var(--border-color);
-        background-color: transparent;
-        border-radius: rounding.$sm;
-        color: var(--text-color);
-
-        &::placeholder {
-            font-weight: bold;
-            opacity: 0.5;
-            color: var(--text-color);
-        }
-
-        &:focus {
-            outline: 1px solid var(--border-color);
-        }
-
-        &:focus + .input__label,
-        &_filled + .input__label {
-            transform: translate(5px, -10px) scale(0.8);
-            backdrop-filter: blur(20px);
-            padding: 0 5px;
-        }
-
-        &_error {
-            border-color: var(--error-color);
-
-            &:focus {
-                outline: 1px solid var(--error-color);
-            }
-        }
+    &_filled {
+      transform: translate(5px, -10px) scale(0.8);
+      padding: 0 5px;
     }
+
+    &_disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  &__input {
+    font-size: typography.$text1;
+    padding: spacing.$sm;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+
+    &::placeholder {
+      font-weight: bold;
+      opacity: 0.5;
+      color: var(--text-color);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus + .input__label {
+      transform: translate(5px, -10px) scale(0.8);
+      padding: 0 5px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  &__fieldset {
+    position: absolute;
+    padding: 0 8px;
+    top: -9px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    border: 1px solid var(--border-color);
+    border-radius: rounding.$sm;
+
+    &_error {
+      border-color: var(--error-color);
+    }
+  }
+
+  &__legend {
+    color: transparent;
+    padding: 0;
+    width: 0;
+
+    &_filled {
+      width: auto;
+      padding: 0 1px;
+    }
+  }
 }

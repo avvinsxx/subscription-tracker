@@ -25,6 +25,9 @@
         --error-color: #{colors.$color-red-700};
         --shadow-color: #{colors.$color-neutral-950};
 
+        --input-text-color: var(--text-color);
+        --input-border-color: var(--border-color);
+
         --btn-primary-color: var(--primary-color);
         --btn-hover-primary-color: oklch(0.566 0.179 58.318);
         --btn-secondary-color: #{colors.$color-neutral-200};
