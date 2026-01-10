@@ -1,10 +1,9 @@
-import Image from "next/image";
-import Lineicons from "@lineiconshq/react-lineicons";
-import { MenuMeatballs1Solid } from "@lineiconshq/free-icons";
+import Image from 'next/image';
+import { BsThreeDotsVertical } from 'react-icons/bs';
 
-import { Button, Typography } from "@/shared";
+import { Button, Typography } from '@/shared';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export const ProfileCard = () => {
   return (
@@ -29,11 +28,7 @@ export const ProfileCard = () => {
         </Typography>
       </div>
       <Button size="sm" variant="outlined" color="secondary">
-        <Lineicons
-          icon={MenuMeatballs1Solid}
-          size={20}
-          transform="rotate(90)"
-        />
+        <BsThreeDotsVertical size={20} />
       </Button>
     </div>
   );

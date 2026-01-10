@@ -1,5 +1,4 @@
-import Lineicons from "@lineiconshq/react-lineicons";
-import { PlusStroke } from "@lineiconshq/free-icons";
+import { FaPlus } from "react-icons/fa";
 
 import { getServices } from "@/data";
 import { Button, Typography } from "@/shared";
@@ -21,7 +20,7 @@ export default async function Page() {
           color="secondary"
           href="/dashboard/services/create"
         >
-          <Lineicons icon={PlusStroke} />
+          <FaPlus />
           Добавить
         </Button>
       </div>
